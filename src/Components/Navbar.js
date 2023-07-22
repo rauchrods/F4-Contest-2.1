@@ -26,7 +26,8 @@ let Navbar = ({ setbooks }) => {
     return (
         <div className="navbar">
             <div className="navleft">
-                <img src={logoimg} alt="logo image company" />
+            {/*eslint-disable-next-line jsx-a11y/img-redundant-alt */}
+                <img src={logoimg} alt="logo image company" /> 
                 <div className="title">
                     <span>KeazoN</span>
                     <span>Books</span>

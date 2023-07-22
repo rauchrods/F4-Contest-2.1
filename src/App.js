@@ -14,34 +14,35 @@ function App() {
 
  useEffect(()=>{
 
-  fetch("https://www.googleapis.com/books/v1/volumes?q=harry+potter", {
-    method: 'GET'  
-  })
-  .then(response => response.json())
-  .then(result => result.items)
-  .then(data =>{
-    setbooks(data);
 
-    fetch("https://www.googleapis.com/books/v1/volumes?q=Sherlock+Holmes", {
+    fetch("https://www.googleapis.com/books/v1/volumes?q=harry+potter", {
       method: 'GET'  
     })
     .then(response => response.json())
     .then(result => result.items)
     .then(data =>{
-      let newarr = [...books];
-      data.forEach((book) =>{
-        newarr.push(book);
+      setbooks(data);
+  
+      fetch("https://www.googleapis.com/books/v1/volumes?q=Sherlock+Holmes", {
+        method: 'GET'  
       })
-      setbooks(newarr);
+      .then(response => response.json())
+      .then(result => result.items)
+      .then(data =>{
+        let newarr = [...books];
+        data.forEach((book) =>{
+          newarr.push(book);
+        })
+        setbooks(newarr);
+      })
+  
     })
-
-  })
-  .catch(error => console.log('error', error));
+    .catch(error => console.log('error', error));
 
 
 
 
- },[]);
+},[]); // eslint-disable-line react-hooks/exhaustive-deps
 
  console.log(books);
 
