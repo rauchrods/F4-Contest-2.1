@@ -10,9 +10,12 @@ let DisplayBooks = ({ books, setSelectedBook }) => {
                 books.map((book, index) => {
 
                     return (
-                        <div className="bookdetail" key={index}>
+                        <div className="bookdetail" key={index} onClick={() => { setSelectedBook(book) }}>
                             <div className="img-cont">
-                                <img src={book.volumeInfo.imageLinks.smallThumbnail} alt="" />
+                                {
+                                    (book.volumeInfo.imageLinks.thumbnail!=null) ? <img src={book.volumeInfo.imageLinks.thumbnail} alt="" /> : <span>Img not available</span>
+                                }
+
                             </div>
                             <div className="contents">
                                 <h2>{book.volumeInfo.title}</h2>

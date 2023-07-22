@@ -76,6 +76,7 @@ body {
     gap: 30px;
     align-items: center;
     padding: 30px;
+    cursor: pointer;
 
 }
 
@@ -170,6 +171,10 @@ body {
     display: flex;
     justify-content: space-between;
     column-gap: 10px;
+}
+
+.button-grp>button:hover{
+    background-color: white;
 }
 
 .ratings{
