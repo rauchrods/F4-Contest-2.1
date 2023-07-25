@@ -35,8 +35,8 @@ let DisplaySelectedBook = ({ selectedbook }) => {
                             <span>Language: {selectedbook.volumeInfo.language}</span>
                         </div>
                         <div className="button-grp">
-                            <button onClick={() => { }}>Read Now!</button>
-                            <button onClick={() => { }}>More Info!</button>
+                            <button onClick={()=>{ window.location.href = `${selectedbook.volumeInfo.previewLink}` }}>Read Now!</button>
+                            <button onClick={()=>{ window.location.href = `${selectedbook.volumeInfo.infoLink}` }}>More Info!</button>
                         </div>
 
                     </div>
